@@ -39,3 +39,17 @@ def calculate_slope(values):
 print(calculate_slope((12,43,5,65)))
 
 #Quadratic equation is calculated as follows: ax² + bx + c = 0. Write a function which calculates solution set of a quadratic equation, solve_quadratic_eqn.
+import cmath
+def solve_quadratic_eqn(values_eq):
+    a,b,c = values_eq[0], values_eq[1], values_eq[2]
+    d = (b**2) * (4 * a * c)
+
+    sol1 = (-b-cmath.sqrt(d))/(2*a)  
+    sol2 = (-b+cmath.sqrt(d))/(2*a) 
+    return sol1, sol2
+print(solve_quadratic_eqn((8,5,9)))
+
+#Declare a function named print_list. It takes a list as a parameter and it prints out each element of the list.
+def print_list(plist):
+    return ' '.join(plist)
+print(print_list(('2','2','4','43','a','b','c','d','ee')))
