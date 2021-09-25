@@ -87,3 +87,14 @@ print(remove_item(food_staff, 'Potato'))
 def sum_of_numbers(value):
     print(sum(range(0,value+1)))
 sum_of_numbers(100)
+
+#Declare a function named sum_of_odds. It takes a number parameter and it adds all the odd numbers in that range.
+def sum_of_odds(value):
+    print(sum(range(0,value+1,2)))
+sum_of_odds(100)
+
+#Declare a function named sum_of_even. It takes a number parameter and it adds all the even numbers in that - range.
+def sum_of_even(value):
+    list_even = [x for x in range(0, value + 1) if x % 2 != 0]
+    print(sum(list_even))
+sum_of_even(100)
