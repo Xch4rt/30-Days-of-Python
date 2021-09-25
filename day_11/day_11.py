@@ -50,6 +50,15 @@ def solve_quadratic_eqn(values_eq):
 print(solve_quadratic_eqn((8,5,9)))
 
 #Declare a function named print_list. It takes a list as a parameter and it prints out each element of the list.
+# 8
 def print_list(plist):
     return ' '.join(plist)
 print(print_list(('2','2','4','43','a','b','c','d','ee')))
+
+#Declare a function named reverse_list. It takes an array as a parameter and it returns the reverse of the array (use loops).
+#9
+def reverse_list(rlist):
+    for i in range(len(rlist),0,-1):
+        print(i, end=" ")
+reverse_list((1,2,3,4,5,6,7,8,9))
+
