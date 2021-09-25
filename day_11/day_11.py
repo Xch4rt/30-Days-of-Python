@@ -166,10 +166,39 @@ print(s1.calculate_std())
 
 #Exercises: Level 3
 #Write a function called is_prime, which checks if a number is prime.
-#Write a functions which checks if all items are unique in the list.
-#Write a function which checks if all the items of the list are of the same data type.
-#Write a function which check if provided variable is a valid python variable
+def is_prime(num):
+    prime_flag = 0
+    if(num > 1):
+        for i in range(2, int(math.sqrt(num)) + 1):
+            if (num % i == 0):
+                prime_flag = 1
+                break
+        return prime_flag == 0
+    else:
+        return False
+print(is_prime(7))
 
-#Go to the data folder and access the countries-data.py file.
-#Create a function called the most_spoken_languages in the world. It should return 10 or 20 most spoken languages in the world in descending order
-#Create a function called the most_populated_countries. It should return 10 or 20 most populated countries in descending order.
+
+#Write a functions which checks if all items are unique in the list.
+def are_unique(values):
+    return len(values) < len(set(values))
+print(are_unique((2,2,3,4,5)))
+
+
+#Write a function which checks if all the items of the list are of the same data type.
+boolean_values = list()
+def data_type(values):
+    for i in range(len(values)):  
+        boolean_values.append(type(values[0]) == str(type(values[i])))
+    return False not in boolean_values
+print(data_type((1,2,3,4,5,6, 'a')))
+#Write a function which check if provided variable is a valid python variable
+from ast import parse
+
+def is_valid_variable_name(name):
+    try:
+        parse('{} = None'.format(name))
+        return True
+    except (SyntaxError, ValueError, TypeError):
+        return False
+print(is_valid_variable_name('x'))
