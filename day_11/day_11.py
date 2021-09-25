@@ -95,6 +95,81 @@ sum_of_odds(100)
 
 #Declare a function named sum_of_even. It takes a number parameter and it adds all the even numbers in that - range.
 def sum_of_even(value):
-    list_even = [x for x in range(0, value + 1) if x % 2 != 0]
+    list_even = [x for x in range(1, value + 1) if x % 2 != 0]
     print(sum(list_even))
 sum_of_even(100)
+
+#Exercises: Level 2
+#Declare a function named evens_and_odds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
+def evens_and_odds(value):
+    list1 = [x for x in range(1, value +1)]
+    odd_count = len(list(filter(lambda x: (x%2 != 0) , list1)))
+    even_count = len(list(filter(lambda x: (x%2 == 0) , list1)))
+    return odd_count, even_count
+print(evens_and_odds(100))
+
+
+#Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
+def factorial(num):
+    if num == 1:
+        return num
+    else:
+       return num*factorial(num-1)
+print(factorial(5))
+
+#Call your function is_empty, it takes a parameter and it checks if it is empty or not
+def is_empty(par):
+    return len(par) == 0
+print(is_empty(()))
+
+
+#Write different functions which take lists. They should calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std (standard deviation).
+from collections import Counter as ct
+class stadistic:
+    def __init__(self, values):
+        self.values = values
+    def calculate_mean(self):
+        print(sum(self.values)/len(self.values))
+
+    def calculate_median(self):
+        n = len(self.values)
+        index = n // 2
+
+        if n % 2 : return sorted(self.values)[index]
+        return sum(sorted(self.values)[index -1 : index + 1]) / 2
+    
+    def calculate_mode(self):
+        c = ct(self.values)
+        mode = [x for x, z in c.items() if z == c.most_common(1)[0][1]]
+        return mode
+    def calculate_range(self):
+        #idk what its range but...
+        return [x for x in range(0, len(self.values))]
+    def calculate_variance(self):
+        m = sum(self.values) / len(self.values)
+        var = sum((x - m)**2 for x in self.values) / len(self.values)
+    def calculate_std(self):#standar deviation
+        var = stadistic.calculate_variance(self)
+        #std = math.sqrt(var)
+        return var
+
+s1 = stadistic([x for x in range(0, 100)])
+
+print(s1.calculate_mean())
+print(s1.calculate_median())
+print(s1.calculate_mode())
+print(s1.calculate_range())
+print(s1.calculate_variance())
+print(s1.calculate_std())
+
+    
+
+#Exercises: Level 3
+#Write a function called is_prime, which checks if a number is prime.
+#Write a functions which checks if all items are unique in the list.
+#Write a function which checks if all the items of the list are of the same data type.
+#Write a function which check if provided variable is a valid python variable
+
+#Go to the data folder and access the countries-data.py file.
+#Create a function called the most_spoken_languages in the world. It should return 10 or 20 most spoken languages in the world in descending order
+#Create a function called the most_populated_countries. It should return 10 or 20 most populated countries in descending order.
