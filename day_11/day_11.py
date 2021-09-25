@@ -62,3 +62,28 @@ def reverse_list(rlist):
         print(i, end=" ")
 reverse_list((1,2,3,4,5,6,7,8,9))
 
+print()
+#Declare a function named capitalize_list_items. It takes a list as a parameter and it returns a capitalized list of items
+def capitalize_list_items(items):
+    print(' '.join(items).upper())
+capitalize_list_items(('a','b','c','d','e','f','g'))
+
+#Declare a function named add_item. It takes a list and an item parameters. It returns a list with the item added at the end.
+food_staff = ['Potato', 'Tomato', 'Mango', 'Milk']
+numbers = [2, 3, 7, 9]
+
+def add_item(alist, value):
+    return alist + [value] #i know append exists:)
+print(add_item(food_staff,'Meat'))
+
+#Declare a function named remove_item. It takes a list and an item parameters. It returns a list with the item removed from it.
+def remove_item(rmlist, value):
+    n = [x for x in rmlist if x != value]
+    return n
+print(remove_item(food_staff, 'Potato'))
+
+
+#Declare a function named sum_of_numbers. It takes a number parameter and it adds all the numbers in that range.
+def sum_of_numbers(value):
+    print(sum(range(0,value+1)))
+sum_of_numbers(100)
