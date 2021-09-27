@@ -30,16 +30,30 @@ print(rgb_color_gen())
 
 #Write a function list_of_hexa_colors which returns any number of hexadecimal colors in an array (six hexadecimal numbers written after #. Hexadecimal numeral system is made out of 16 symbols, 0-9 and first 6 letters of the alphabet, a-f. Check the task 6 for output examples).
 hexa = list()
-def list_of_hexa_colors():
-    for x in range(6):
+def list_of_hexa_colors(z):
+    for x in range(z):
         hexa.append("#{:06x}".format(random.randint(0,256**3)))
-    print(hexa)
-list_of_hexa_colors()
-
+    return hexa
+#print(list_of_hexa_colors(6))
+print('-'*120)
 #Write a function list_of_rgb_colors which returns any number of RGB colors in an array.
 list_rgb = list()
 def list_of_rgb_colors():
-    for i in range(random.randint(1, 100)):
+    for i in range(random.randint(1, 10)):
         list_rgb.append(rgb_color_gen())
     return list_rgb
 print(list_of_rgb_colors())
+
+#Write a function generate_colors which can generate any number of hexa or rgb colors.
+def generate_colors(tpe, value):
+    list_ = list()
+    if tpe.lower() == 'hexa':
+        list_ = list_of_hexa_colors(value)
+    if tpe.lower() == 'rgba':
+        for i in range(value):
+            list_.append(list_of_rgb_colors())
+
+    return list_
+print('li')
+print(generate_colors('hexa', 4))
+        
