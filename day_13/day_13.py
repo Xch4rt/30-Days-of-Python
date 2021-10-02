@@ -40,3 +40,13 @@ print(d_countries)
 names = [[('Asabeneh', 'Yetayeh')], [('David', 'Smith')], [('Donald', 'Trump')], [('Bill', 'Gates')]]
 conc_names = [str(i[0][0]+' '+ i[0][1] ) for i in names]
 print(conc_names)
+
+#Write a lambda function which can solve a slope or y-intercept of linear functions.                             
+'''
+y = m * x + c
+c = y-m * x
+m = a / b
+'''
+intercept = lambda p1,p2 : p1[1] - ((p1[1]-p2[1])/(p1[0]-p2[0]))*p1[0]
+
+print(intercept([5,2],[7,2]))
