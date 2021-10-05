@@ -1,4 +1,4 @@
-countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland']
+countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland', 'MyLand','land']
 names = ['Asabeneh', 'Lidiya', 'Ermias', 'Abraham']
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -22,3 +22,15 @@ print(list(nn_list))
 #Use map to change each name to uppercase in the names list
 nnn_list = map(lambda x: x.upper(), names)
 print(list(nnn_list))
+
+#Use filter to filter out countries containing 'land'.
+f_list = filter(lambda x: 'land' in x.lower(), countries)
+print(list(f_list))
+
+#Use filter to filter out countries having exactly six characters.
+ff_list = filter(lambda x: len(x) == 6, countries)
+print(list(ff_list))
+
+#Use filter to filter out countries containing six letters and more in the country list.
+fff_list = filter(lambda x: len(x) >= 6, countries)
+print(list(fff_list))
