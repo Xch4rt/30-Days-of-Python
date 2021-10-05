@@ -34,3 +34,27 @@ print(list(ff_list))
 #Use filter to filter out countries containing six letters and more in the country list.
 fff_list = filter(lambda x: len(x) >= 6, countries)
 print(list(fff_list))
+
+#Use filter to filter out countries starting with an 'E'
+firstE = filter(lambda x: x[0].lower() == 'e', countries)
+print(list(firstE)) 
+
+#Chain two or more list iterators (eg. arr.map(callback).filter(callback).reduce(callback))
+
+#Declare a function called get_string_lists which takes a list as a parameter and then returns a list containing only string items.
+def get_string_list(list_):
+    return filter(lambda x: 'str' in str(type(x)), list_)
+print(list(get_string_list((1,2,'as','asdf','fasd',3,'s'))))
+
+#Use reduce to sum all the numbers in the numbers list.
+#total = reduce((lambda x,y: x+y), numbers) actually reduce is deprecated, we need to install functools n import from this 
+
+#Declare a function called categorize_countries that returns a list of countries with some common pattern (you can find the countries list in this repository as countries.js(eg 'land', 'ia', 'island', 'stan')).
+from countries import countries as c
+commons = ['land','la','island','stan']
+
+def categorize_countries():
+    return list(filter(lambda x: commons[0] in x or commons[1] in x or commons[2] in x or commons[3] in x, c))
+print(categorize_countries())
+
+#Create a function returning a dictionary, where keys stand for starting letters of countries and values are the number of country names starting with that letter.
