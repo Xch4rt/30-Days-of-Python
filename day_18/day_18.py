@@ -13,7 +13,16 @@ points = ['-1', '2', '-4', '-3', '-1', '0', '4', '8']
 sorted_points =  [-4, -3, -1, -1, 0, 2, 4, 8]
 distance = 8 -(-4) # 12
 
-
+#Write a pattern which identifies if a string is a valid python variable
+'''
+is_valid_variable('first_name') # True
+is_valid_variable('first-name') # False
+is_valid_variable('1first_name') # False
+is_valid_variable('firstname') # True
+'''
+def is_valid_variable(pattern):
+    return bool(re.fullmatch(r"[_A-z]+",pattern))
+print(is_valid_variable('1firstname'))
 
 #Clean the following text. After cleaning, count three most frequent words in the string.
 sentence = '''%I $am@% a %tea@cher%, &and& I lo%#ve %tea@ching%;. There $is nothing; &as& mo@re rewarding as educa@ting &and& @emp%o@wering peo@ple. ;I found tea@ching m%o@re interesting tha@n any other %jo@bs. %Do@es thi%s mo@tivate yo@u to be a tea@cher!?'''
